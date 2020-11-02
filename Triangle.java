@@ -28,7 +28,6 @@ public class Triangle{
     double sideA = Math.round(v1.distanceTo(v2) * 10000);
     double sideB = Math.round(v2.distanceTo(v3) * 10000);
     double sideC = Math.round(v3.distanceTo(v1) * 10000);
-    System.out.println("sideA = " + sideA + ", sideB = " + sideB + ", sideC = " + sideC);
     if(sideA == sideB && sideC == sideA) {
       return("equilateral");
     }else if(sideA == sideB || sideB == sideC || sideC == sideA){
@@ -39,5 +38,14 @@ public class Triangle{
   }
   public String toString(){
     return("v1("+v1.getX()+", "+v1.getY()+") "+"v2("+v2.getX()+", "+v2.getY()+") "+"v3("+v3.getX()+", "+v3.getY()+")");
+  }
+  public void setVertex(int index, Point newP){
+    if (index == 0){
+      v1 = newP;
+    }if (index == 1){
+      v2 = newP;
+    }if (index == 2){
+      v3 = newP;
+    }
   }
 }
